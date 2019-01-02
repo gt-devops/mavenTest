@@ -13,8 +13,7 @@ public class App
     }
 
     public static void main(String[] args) {
-        log.debug(new App().getMessage());
-        //System.out.println(new App().getMessage());
+        System.out.println(new App().getMessage());
     }
 
     private final String getMessage() {
