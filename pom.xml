@@ -7,17 +7,17 @@
   <version>1.0-SNAPSHOT</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
-	
- 
-	
-
-	<!-- coverage -->
-<profile>
-    <id>coverage</id>
-
-    <build>
-        <plugins>
-	<plugin>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
         <!-- Build an executable JAR -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -32,6 +32,15 @@
           </archive>
         </configuration>
       </plugin>
+    </plugins>
+  </build>
+	
+	
+	<!-- coverage -->
+<profile>
+    <id>coverage</id>
+    <build>
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -111,15 +120,7 @@
             <version>${sonar-jacoco-listeners.version}</version>
             <scope>test</scope>
         </dependency>
-	    
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-    
+    </dependencies>
 </profile>
 <!-- Integraton tests -->
 <profile>
